@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ace Attorney - Web Emulator (NDS)</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #1e1e1e; 
+        }
+
+        #game {
+            width: 100vw;
+            height: 100vh;
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="game">
+        <p style="text-align:center; color:#fff; padding-top: 50vh; font-family: sans-serif;">
+            Loading Ace Attorney... (Remember to allow pop-ups if the emulator launches in a new window!)
+        </p>
+    </div>
+    
+    <script>
+        // Emulator configuration
+        window.EJS_player = "#game";
+        
+        // **CHANGED CORE:** Use 'nds' for Nintendo DS games.
+        window.EJS_core = "nds"; 
+        
+        window.EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+        
+        // Your specific ROM file URL
+        window.EJS_gameUrl = "https://github.com/factoringcentral/factoringcentral.github.io/raw/refs/heads/main/aceattorney.zip";
+
+    </script>
+    
+    <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+</body>
+</html>
