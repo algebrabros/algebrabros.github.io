@@ -141,10 +141,16 @@
             const blob = new Blob([htmlContent], { type: 'text/html' });
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
-            a.download = 'launcher.html';
+            a.download = 'game_launcher.html'; // changed filename for clarity
+
+            // append, click, and remove the element for a cleaner process
+            document.body.appendChild(a);
             a.click();
-            URL.revokeObjectURL(a.href);
-        }
+            document.body.removeChild(a);
+    
+            // clean up the object URL to free memory
+            URL.revokeObjectURL(a.href); 
+}
     </script>
 </body>
 </html>
