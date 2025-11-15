@@ -68,8 +68,6 @@
     </style>
 </head>
 <body>
-    <button id="download-btn" onclick="downloadLauncher()">If games are getting blocked, use this HTML file</button>
-    <h1>Game Launcher</h1>
 
     <button onclick="openSite('https://watch.sling.com')">Open Sling</button>
     <button onclick="openSite('https://definitelynotblocked.vercel.app/games/1v1lol/index.html')">Open 1v1.lol</button>
@@ -136,21 +134,7 @@
             }
         }
 
-        function downloadLauncher() {
-            const htmlContent = document.documentElement.outerHTML;
-            const blob = new Blob([htmlContent], { type: 'text/html' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'game_launcher.html'; // changed filename for clarity
-
-            // append, click, and remove the element for a cleaner process
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-    
-            // clean up the object URL to free memory
-            URL.revokeObjectURL(a.href); 
-}
+        
     </script>
 </body>
 </html>
